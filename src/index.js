@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const title = 'Burger Builder';
+import App from './containers/App'
 
 ReactDOM.render(
-  <div>{title}</div>,
+  <App />,
   document.getElementById('App')
 );
 
