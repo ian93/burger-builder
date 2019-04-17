@@ -2,7 +2,7 @@ const Webpack = require('webpack');
 const Path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   module: {
     rules: [
       {

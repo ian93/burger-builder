@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import BurgerIngredients from './BurgerIngredients/BurgerIngredients';
 
 const burger = props => {
-  const transfromedIngredients = Object.keys(props.ingredients).map(
+  const { transfromedIngredients } = Object.keys(props.ingredients).map(
     ingredientKey => {
       return [...Array(props.ingredients[ingredientKey])].map((_, idx) => {
         return (
