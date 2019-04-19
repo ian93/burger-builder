@@ -10,7 +10,7 @@ const navigationItems = () => (
   </Ul>
 );
 
-const Ul = styled.li`
+const Ul = styled.ul`
   margin: 0;
   padding: 0;
   height: 100%;
