@@ -2,14 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '../../Logo/Logo';
+import NavigationItems from '../NavigationItems/NavigationItems';
+import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
-const toolbar = () => (
+const toolbar = props => (
   <Toolbar>
-    <div>Menu</div>
-    <Logo />
-    <nav>
-      ...
-    </nav>
+    <DrawerToggle click={props.clicked} />
+    <LogoStyle>
+      <Logo />
+    </LogoStyle>
+    <NavStyle>
+      <NavigationItems />
+    </NavStyle>
   </Toolbar>
 );
 
@@ -28,6 +32,16 @@ const Toolbar = styled.header`
   z-index: 90;
   nav {
     height: 100%
+  }
+`;
+
+const LogoStyle = styled.div`
+  height: 80%;
+`;
+
+const NavStyle = styled.nav`
+  @media (max-width: 499px) {
+    display: none;
   }
 `;
 
