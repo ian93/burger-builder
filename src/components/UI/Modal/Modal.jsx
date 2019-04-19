@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
+const areEqual = (prevProps, nextProps) => {
+  return nextProps.show === prevProps.show;
+}
 const modal = props => (
   <Aux>
     <Backdrop show={props.show} click={props.modalClosed} />
@@ -33,4 +36,4 @@ const Modal = styled.div`
   opacity: ${props => props.show ? 1 : 0};
 `;
 
-export default modal;
+export default React.memo(modal, areEqual);
