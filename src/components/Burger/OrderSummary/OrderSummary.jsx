@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Aux from '../../../hoc/Aux';
+import Button from '../../UI/Button/Button';
 
 const orderSummary = props => {
   const ingredientSummary = Object.keys(props.ingredients).map(
@@ -19,6 +20,18 @@ const orderSummary = props => {
       <p>Ingredient(s) in this order:</p>
       <ul>{ingredientSummary}</ul>
       <p>Continue to checkout?</p>
+      <strong>
+        <p>
+          Total Price:&nbsp;$&nbsp;
+          {props.totalPrice.toFixed(2)}
+        </p>
+      </strong>
+      <Button btnType="Danger" click={props.cancel}>
+        CANCEL
+      </Button>
+      <Button btnType="Success" click={props.continue}>
+        CONTINUE
+      </Button>
     </Aux>
   );
 };

@@ -4,8 +4,7 @@ const Path = require('path');
 module.exports = {
   entry: './src/index.jsx',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.jsx$/,
         loader: 'babel-loader',
         options: {
@@ -21,6 +20,17 @@ module.exports = {
         loader: 'babel-loader',
         exclude: '/node_modules',
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpg|gif)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            name: '[hash:7].[ext]',
+            outputPath: 'assets'
+          }
+        }
+      }
     ],
   },
   resolve: {
