@@ -5,7 +5,7 @@ import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
 const areEqual = (prevProps, nextProps) => {
-  return nextProps.show === prevProps.show;
+  return (nextProps.show === prevProps.show && nextProps.children === prevProps.children);
 }
 const modal = props => (
   <Aux>
