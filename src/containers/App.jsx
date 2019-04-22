@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import Layout from '../hoc/Layout/Layout';
@@ -12,19 +12,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class App extends Component {
-  state = {
-    build: true
-  };
+const app = () => (
+  <Layout>
+    <GlobalStyle />
+    <BurgerBuilder />
+  </Layout>
+);
 
-  render() {
-    return (
-      <Layout>
-        <GlobalStyle />
-        {this.state.build ? <BurgerBuilder /> : null}
-      </Layout>
-    );
-  }
-}
-
-export default App;
+export default app;

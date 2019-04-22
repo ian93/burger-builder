@@ -17,7 +17,7 @@ const orderSummary = props => {
         {props.ingredients[ingredientKey]}
       </li>
     )
-  );  
+  );
   return (
     <Aux>
       <h3>Your Order</h3>
